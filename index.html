@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Transit Equity Dashboard</title>
+    <script defer src="js/d3.js"></script>
+
+    <script defer src="js/page.js"></script>
+    <script defer src="js/accessibility.js"></script>
+    <script defer src="js/equity.js"></script>
+
+    <script defer src="js/scroller.js"></script>
+    <script defer src="js/sections_sample.js"></script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src = 'https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js'></script> -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Theme CSS - Includes Bootstrap -->
+    <link href="css/page.css" rel="stylesheet">
+    <link href="css/equity.css" rel="stylesheet">
+    <link href="css/accessibility.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="#">
+
+</head>
+
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://d3js.org/d3-hsv.v0.1.min.js"></script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<body>
+    <div id="graphic">
+        <section class="step masthead" id="masterhead">
+            <div class="logo-wrapper">
+                <a href="https://cspav.gatech.edu/"><img src="img/CSPAV_TechGold.jpg" alt="" width="200" height="35"></a>
+            </div>
+            <h1 class="mast">Atlanta Transit</h1>
+            <div class="focus"> 
+                <div class="focus--mask">
+                        <div class="focus--mask-inner">Equity</div>
+                </div>
+            </div> 
+            <h3 class="mast">An interactive tool that compares On-demand Multimodal Transit System (ODMTS) and the conventional transit system in Atlanta in terms of <br> 1) overall accessibility and <br> 2) transit equity/equality</h3>
+        </section>
+
+        <section class="step">
+            <h1>On-Demand Multimodal Transit System</h1>
+            <h2>ODMTS connects residents in every corner of Atlanta to high-frequency rail/bus networks by serving their first/last miles via on-demand shuttles. <br> <br>
+                ODMTS is designed to contribute to improving both the transit accessibility and transit equity in Atlanta area.</h2>
+            <a class="btn-light btn-xl" href="https://sam.isye.gatech.edu/projects/demand-multimodal-transit-systems/atlanta-pilot">Learn More</a>
+        </section>
+
+        <section class="step"> 
+            <h1>Transit accessibility</h1>
+            <h2>We measure transit accessibility by how many destinations (e.g., jobs or stores) can be reached from a neighborhood within a given threshold. The threshold can be defined in two ways:
+                    <br>
+                    <br>
+                    1)	The travel time by public transit
+                    <br>
+                    <br>
+                    2)	The ratio of the travel time by public transit to the travel time by driving
+
+            </h2>
+        </section>
+
+
+        <section class="step back">
+            <div class="mapWrapperAcc">
+                <div class="mapTitle"> <p>Exploring Transit accessbility</p></div>
+                <div class="mapTitleLeft"> <p>Conventional Public Transit System </p> </div>
+                <div class="mapTitleRight"> <p style="color: #dcfcb8;">On-demand Multimodal Transit System</p> </div>
+                <div id="acc-wrapper">
+                    <div id="overallSummary">
+                        <div id="overallTitle">
+                            <p>Overall Accessibility</p>
+                        </div>
+                        <div id="overallSmallText">
+                            <p> Current </p>
+                            <p style="color: #dcfcb8; font-weight: 300;"> ODMTS </p>
+                        </div>
+                        <div id="overallValue">
+                            <p> <span id="overallAccBefore"></b> </span> % </p>
+                            <p> <span id="overallAccAfter"></b> </span> % </p>
+                        </div>
+                        <div class="overallDescript" id="overallContent">
+                            <p>of all residents can <b>commute to work</b> by transit within <b>45 minutes</b> during morning peak hour
+                        </div>
+                    </div>
+                </div>
+                <div id="mapBefAcc"></div>
+                <div id="mapAftAcc"></div>
+                <div id="filter-wrapper-Acc">
+                    <div class="sessionAcc_trip">
+                        <div class="session_title">
+                            <p>Trip type</p>
+                        </div>
+                        <div class='rowMap' id='filtersAcc_trip'>
+                            <input id='comAcc' type='radio' name='toggleAcc_trip' value='com' checked='checked'>
+                            <label for='comAcc'>Commuting trip</label>
+                            <input id='nonAcc' type='radio' name='toggleAcc_trip' value='non'>
+                            <label for='nonAcc'>Non-commuting trip</label>
+                        </div>
+                    </div>
+                    <div class='sessionAcc_meas'>
+                        <div class="session_title">
+                            <p>Accesibility Type</p>
+                        </div>
+                        <div class='rowMap' id='filtersAcc_meas'>
+                            <input id='absAcc' type='radio' name='toggleAcc_meas' onclick="getSliderAcc_abs()" value='abs' checked='checked'>
+                            <label for='absAcc'>Travel Time by Public Transit</label>
+                            <input id='relAcc' type='radio' name='toggleAcc_meas' onclick="getSliderAcc_rel()" value='rel'>
+                            <label for='relAcc' id= 'filter_rel'>
+                                <div class="fraction">
+                                    <p class="num">Travel Time by Public Transit</p>
+                                    <p class="dem">Travel Time by Driving</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="sliderContainer">
+                        <div class='sliderAccContentAbsolute'>
+                            <p style="margin-bottom:7px;"> Accessible within <span style="font-weight:600" id="sliderValueAcc_abs"> </span> minutes</p>
+                            <input id='myRangeAcc_abs' class="slider" type="range" min="30" max="75" value="45" step="3">
+                            <p style="text-align:left; margin-bottom: 0em; font-size: 13px; font-weight: 100;"> 30 minutes <span style="float:right"> 75 minutes </span> </p>
+                        </div>
+                        <div class='sliderAccContentRelative'>
+                            <p style="margin-bottom:7px;"> Accessible within <span style="font-weight:600" id="sliderValueAcc_rel"> </span> X driving time</p>
+                            <input id='myRangeAcc_rel' class="slider" type="range" min="1" max="3" value="2" step="0.2">
+                            <p style="text-align:left; margin-bottom: 0em; font-size: 13px; font-weight: 100;"> Equal <span style="float:right"> 3 times </span> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="legend-box"></div>
+                <div class="legend-wrapper">
+                    <div class="legendTitle" id="legendTitle">
+                        <p>Proportion of residents who can commute to work by transit within <b>45 minutes</b> during morning peak hour
+                        </p>
+                    </div>
+                    <div class="legendBoxes">
+                        <div class="legendBox", style="background-color:#213E9A"></div>
+                        <div class="legendBox", style="background-color:#3C1FA7"></div>
+                        <div class="legendBox", style="background-color:#3C1FA7"></div>
+                        <div class="legendBox", style="background-color:#C318B0"></div>
+                        <div class="legendBox", style="background-color:#D01367"></div>
+                        <div class="legendBox", style="background-color:#DE0F0E"></div>
+                        <div class="legendBox", style="background-color:#EC7007"></div>
+                        <div class="legendBox", style="background-color:#F9E200"></div>
+                    </div>
+                    <div class="legendText">
+                        <p>less then 5%</p>
+                        <p>5 - 10%</p>
+                        <p>10 - 20%</p>
+                        <p>20 - 30%</p>
+                        <p>30 - 40%</p>
+                        <p>40 - 60%</p>
+                        <p>60 - 80%</p>
+                        <p>more than 80%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="step"> 
+            <h1>Transit equity</h1>
+            <h2>Both equity and equality seek a fair distribution of public resources. <br> <br>
+                Equity recognizes that each group of people has different circumstances/demands and allocates the resources and opportunities accordingly. ‘Transit service gap’ is employed to capture the transit (in)equity by comparing the supply and demand of transit services at neighborhood level.
+            </h2>
+        </section>
+
+        <section class="step"> 
+            <h1>Transit equality</h1>
+            <h2 id = "equality_desc">Equality means each group of people is given the same resources or opportunities. Transit (in)equality is measured by the Gini index and Lorenz curve which capture how far the distribution is from equality.
+            </h2>
+        </section>
+
+        <section class="step back">
+            <div class="mapWrapperEqu">
+                <div class="mapTitle"> <p>Exploring Transit equity</p></div>
+                <div class="mapTitleLeft"> <p>Conventional Public Transit System </p> </div>
+                <div class="mapTitleRight"> <p style="color: #dcfcb8;">On-demand Multimodal Transit System</p> </div>
+                <div id='plot-wrapper'>
+                    <div id='gapSummary'>
+                        <div id='gapTitle'>
+                            <p> Transit Inequity: demand-supply gap <a class="button" href="#popup1"><span class="material-symbols-outlined">Help</span></a></p>
+                        </div>
+                        <div id='gapSmallText'>
+                            <p> Current </p>
+                            <p style="color: #dcfcb8; font-weight: 300;"> ODMTS </p>
+                        </div>
+                        <div id='gapValue'>
+                            <p> <span id="gapValueBefore"></b> </span> </p>
+                            <p> <span id="gapValueAfter"></b> </span> </p>
+                        </div>
+                    </div>
+                    <div id='scatterPlot'></div>
+                    <div id='giniSummary'>
+                        <div id="giniTitle">
+                            <p>Transit Inequality by Level of Demand <a class="button" href="#popup2"><span class="material-symbols-outlined">Help</span></a></p>
+                        </div>
+                        <div id="giniSmallText">
+                            <p> Current </p>
+                            <p style="color: #dcfcb8; font-weight: 300;"> ODMTS </p>
+                        </div>
+                        <div id="giniValue-wrapper">
+                            <div id="giniValue">
+                                <p style="color: #fffde6;"> <span id="giniBeforeLow"></b> </span> </p>
+                                <p style="color: #f7adad;"> <span id="giniBeforeMid"></b> </span> </p>
+                                <p style="color: #e34b4b;"> <span id="giniBeforeHigh"></b> </span> </p>
+                            </div>
+                            <div id="giniValue">
+                                <p style="font-size: 12px; font-weight: 300; text-align: center;"> Low-demand neighborhoods </p>
+                                <p style="font-size: 12px; font-weight: 300; text-align: center;"> Mid-demand neighborhoods </p>
+                                <p style="font-size: 12px; font-weight: 300; text-align: center;"> High-demand neighborhoods </p>
+                            </div>
+                            <div id="giniValue">
+                                <p style="color: #fffde6;"> <span id="giniAfterLow"></b> </span> </p>
+                                <p style="color: #f7adad;"> <span id="giniAfterMid"></b> </span> </p>
+                                <p style="color: #e34b4b;"> <span id="giniAfterHigh"></b> </span> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id='lorenzCurve'></div>
+                </div>
+                <div id="mapBefEqu"></div>
+                <div id="mapAftEqu"></div>
+                <div id="filter-wrapper-Equ">
+                    <div class='sessionEqu_demand'>
+                        <div class="session_title">
+                            <p>Transit demand type</p>
+                        </div>
+                        <div class="dropdown">
+                            <label-drop for="demand-type"></label-drop>
+                            <select name="demand-type" id="demandEqu">
+                                <option value="dep">Population without vehicles</option>
+                                <option value="min">Minority population</option>
+                                <option value="pov">Low-income population</option>
+                                <option value="emp">Unemployed population</option>
+                                <option value="dis">Disabled population</option>
+                                <option value="eld">Elderly population</option>
+                                <option value="chi">Children below 14</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="sessionEqu_unit">
+                        <div class="session_title">
+                            <p>Transit demand unit</p>
+                        </div>
+                        <div class='rowMap' id='unitEqu'>
+                            <input id='act' type='radio' name='toggle_unit' onclick="unit_num()" value='act' checked='checked'>
+                            <label for='act'>Number of people</label>
+                            <input id='pct' type='radio' name='toggle_unit' onclick="unit_pct()" value='pct'>
+                            <label for='pct'>Percentage (%)</label>
+                        </div>
+                    </div>
+                    <div class="sessionEqu_trip">
+                        <div class="session_title">
+                            <p>Trip type</p>
+                        </div>
+                        <div class='rowMap' id='tripEqu'>
+                            <input id='com' type='radio' name='toggle_trip' value='com' checked='checked'>
+                            <label for='com'>Commuting trip</label>
+                            <input id='non' type='radio' name='toggle_trip' value='non'>
+                            <label for='non'>Non-commuting trip</label>
+                        </div>
+                    </div>
+                    <div class='sessionEqu_meas'>
+                        <div class="session_title">
+                            <p>Accesibility Type</p>
+                        </div>
+                        <div class='rowMap' id='filtersEqu_meas'>
+                            <input id='abs' type='radio' name='toggle_meas' onclick="getSliderEqu_abs()" value='abs' checked='checked'>
+                            <label for='abs'>Travel Time by Public Transit</label>
+                            <input id='rel' type='radio' name='toggle_meas' onclick="getSliderEqu_rel()" value='rel'>
+                            <label id= 'filter_rel' for='rel'>
+                                <div class="fraction">
+                                    <p class="num">Travel Time by Public Transit</p>
+                                    <p class="dem">Travel Time by Driving</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="sliderContainer">
+                        <div class='sliderEquContentAbsolute'>
+                            <p style="margin-bottom:7px;"> Accessible within <span style="font-weight:600" id="sliderValueEqu_abs"> </span> minutes</p>
+                            <input id='myRangeEqu_abs' class="slider" type="range" min="30" max="75" value="45" step="3">
+                            <p style="text-align:left; margin-bottom: 0em; font-size: 13px; font-weight: 100;"> 30 minutes <span style="float:right"> 75 minutes </span> </p>
+                        </div>
+                        <div class='sliderEquContentRelative'>
+                            <p style="margin-bottom:7px;"> Accessible within <span style="font-weight:600" id="sliderValueEqu_rel"> </span> X driving time</p>
+                            <input id='myRangeEqu_rel' class="slider" type="range" min="1" max="3" value="2" step="0.2">
+                            <p style="text-align:left; margin-bottom: 0em; font-size: 13px; font-weight: 100;"> Equal <span style="float:right"> 3 times </span> </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="legend-wrapper">
+                    <div class="legendInfo">
+                        <a class="button" href="#popup3"><span class="material-symbols-outlined">Help</span></a>
+                    </div>
+                </div>
+                <div id="popup1" class="overlay">
+                    <div class="popup">
+                        <a class="close" href="#mapWrapperEqu">&times;</a>
+                        <h4 class="title">How is the 'Transit Inequality' measured?</h4>
+                        <div class="content">
+                            <ul>
+                            <li>The numeric values are Gap indices that summarize the overall gap between transit supply (i.e., accessibility) and demand, which is measured by:
+                                    <p class="cmath"> $$ \sum_{i=1}^n(\mid ServiceSupply_{i}^{percentile}\mid - \mid ServiceDemand_{i}^{percentile}\mid) \over n $$</p></li>
+                            <li>The Gap index ranges from 0 to 1, where a value of 1 represents total inequity.</li>
+                            <li>The scatterplot shows how the transit service supply is distributed with respect to the transit demand variable.</li>
+                            </ul>
+                    </div>
+                    </div>
+                    <div id='plot-wrapper'>
+                        <div id='gapSummary'>
+                            <div id='gapTitle'>
+                                <p> Transit Inequity: demand-supply gap <a class="button" href="#popup1"><span class="material-symbols-outlined">Help</span></a></p>
+                            </div>
+                            <div id='gapSmallText'>
+                                <p> Current </p>
+                                <p style="color: #dcfcb8; font-weight: 300;"> ODMTS </p>
+                            </div>
+                            <div id='gapValue'>
+                                <p> <span id="gapValueBefore2"></b> </span> </p>
+                                <p> <span id="gapValueAfter2"></b> </span> </p>
+                            </div>
+                        </div>
+                        <div id='scatterPlot'></div>
+                        <div id='giniSummary'></div>
+                        <div id="lorenzCurve" style="visibility:hidden"></div>
+                    </div>
+                </div>
+                <div id="popup2" class="overlay">
+                    <div class="popup" style="top: 50%;">
+                        <h4 class="title">How is the 'Transit Inequality' measured?</h4>
+                        <a class="close" href="#mapWrapperEqu">&times;</a>
+                        <div class="content">
+                            <ul>
+                            <li>The numeric values are Gini indices which represent the degree of inequality among neighborhoods with low/mid/high transit demand, respectively. </li>
+                            <li>A high value of Gini index means the distribution is far from equal. </li>
+                            <li>The plot is showing Lorenz curves which also indicate the degree of inequality based on how far it is from the line of equality.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id='plot-wrapper'>
+                        <div id='gapSummary'></div>
+                        <div id='scatterPlot' style="visibility:hidden"></div>
+                        <div id='giniSummary'>
+                            <div id="giniTitle">
+                                <p>Transit Inequality by Level of Demand <a class="button" href="#popup2"><span class="material-symbols-outlined">Help</span></a></p>
+                            </div>
+                            <div id="giniSmallText">
+                                <p> Current </p>
+                                <p style="color: #dcfcb8; font-weight: 300;"> ODMTS </p>
+                            </div>
+                            <div id="giniValue-wrapper">
+                                <div id="giniValue">
+                                    <p style="color: #fffde6;"> <span id="giniBeforeLow2"></b> </span> </p>
+                                    <p style="color: #f7adad;"> <span id="giniBeforeMid2"></b> </span> </p>
+                                    <p style="color: #e34b4b;"> <span id="giniBeforeHigh2"></b> </span> </p>
+                                </div>
+                                <div id="giniValue">
+                                    <p style="font-size: 12px; font-weight: 300; text-align: center;"> Low-demand neighborhoods </p>
+                                    <p style="font-size: 12px; font-weight: 300; text-align: center;"> Mid-demand neighborhoods </p>
+                                    <p style="font-size: 12px; font-weight: 300; text-align: center;"> High-demand neighborhoods </p>
+                                </div>
+                                <div id="giniValue">
+                                    <p style="color: #fffde6;"> <span id="giniAfterLow2"></b> </span> </p>
+                                    <p style="color: #f7adad;"> <span id="giniAfterMid2"></b> </span> </p>
+                                    <p style="color: #e34b4b;"> <span id="giniAfterHigh2"></b> </span> </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="lorenzCurve"></div>
+                    </div>
+                </div>
+                <div id="popup3" class="overlay">
+                    <div class="popup" style="top: 47%; left: 18%;">
+                        <h4 class="title">How does the legend work?</h4>
+                        <a class="close" href="#mapWrapperEqu">&times;</a>
+                        <div class="content">
+                            <ul>
+                            <li>The legend shows the level of transit accessibility and transit demand that each Block Group falls under</li>
+                            <li><span style="background: #663d9c;">Purple</span> means transit is over-supplied compared to the low transit demand </li>
+                            <li><span style="background: #b55353;">Red</span> means transit is under-spplied compared to the high transit demand </li>
+                            <li><span style="background: #fffacf; color: black;">Ivory</span> means transit supply corresponds to the transit demand </li>
+                            <li>Click each of the nine boxes to highlight neighborhoods in each category; or click each circle on the axes to highlight by row/column </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="filter-wrapper-Equ"></div>
+                    <div id="legend-wrapper"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="step back">
+            <div class="DesLeft">
+                <h2 class="midtitle">
+                    Description
+                </h2>
+                <h3 class="description">
+                    ODMTS, a novel transit service, contributes to improving transit accessibility across the Atlanta region. Transit accessbility ~
+                </h3>
+            </div>
+            <div class="DesRight">
+                <h2 class="midtitle">
+                    Team
+                </h2>
+                <h3 class="description">
+                    <ul>UJ</ul>    
+                    <ul>SJ</ul>    
+                    <ul>Subhro</ul> 
+                </h3>
+            </div>
+
+        </section>
+
+    </div>
+
+    <div id="vis"></div>
+    
+
+    <!-- Custom scripts for this template -->
+    <!-- <script src="js/d3.js"></script>
+
+    <script src="js/page.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/equity.js"></script>
+
+    <script src="js/scroller.js"></script>
+    <script src="js/sections_sample.js"></script> -->
+
+
+</body>
