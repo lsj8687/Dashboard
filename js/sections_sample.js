@@ -57,13 +57,13 @@ function draw1() {
             .attr('height', 950)
             .append("g");
 
-        plot.append('svg:image')
+        plot.append('image')
             .attr('id', 'odmts')
             .attr('width', 900)
             .attr('height', 1100)
             .attr('x', -80)
             .attr('y', -80)
-            .attr('href', 'img/ODMTS.svg');
+            .attr('href', 'img/ODMTS.png');
     }
 
     plot();
@@ -81,13 +81,13 @@ function draw2() {
             .attr('height', 950)
             .append("g");
 
-        accfig.append('svg:image')
+        accfig.append('image')
             .attr('id', 'acc')
             .attr('width', 900)
             .attr('height', 1100)
             .attr('x', -90)
             .attr('y', -80)
-            .attr('href', 'img/accfig.svg');
+            .attr('href', 'img/accfig.png');
     }
 
     accfig();
@@ -473,7 +473,6 @@ let activationFunctions = [
     draw0,
     draw3, 
     draw4,
-    draw0,
     draw0
 ]
 
