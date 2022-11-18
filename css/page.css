@@ -22,9 +22,24 @@ a:link, a:visited {
     text-decoration: none;
   }
   
-  a:hover, a:active {
+a:hover, a:active {
     color: #808080;
   }
+
+#logoCSPAV {
+    -webkit-filter: none !important;
+    filter: none !important;
+}
+
+a img {
+    -webkit-filter: grayscale(100%);
+    filter: gray;
+}
+
+a:hover img {
+    -webkit-filter: grayscale(0%);
+    filter: none;
+}
 
 h1	{
 	position: absolute;
@@ -108,9 +123,21 @@ h5 {
     top: 0px;
     bottom: 0px;
     width: calc(50vw);
-    height: 100%;
+    height: 50%;
     right: 0px;
 }
+#TeamLogo {
+    position: absolute;
+    top: 50%;
+    right: 20vw;
+    width: calc(30vw);
+}
+
+#TeamLogoList {
+    display: flex;
+    justify-content: space-around;
+}
+
 .team-member {
     margin-top: 20px;
     color: white;
@@ -170,12 +197,13 @@ h5 {
     line-height: 1.5em;
 	font-size: calc(1rem + 1.5vw);
     font-weight: 700;
+    width: 70%;
 }
 .mast-text {
     text-align: start;
     position: absolute;
     display: flex;
-    top: 52%;
+    top: 55%;
     width: 40%;
 }
 .logo-wrapper {
