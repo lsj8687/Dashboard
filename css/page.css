@@ -121,20 +121,21 @@ h5 {
     font-weight: 300;
     text-align:justify;
 }
-.team-info {
+.member-info {
     color: white;
     text-align: left;
     list-style-type: none;
-    margin-left: 50px;
-    margin-top: 5px;
+    margin-left: 6px;
+    margin-top: 0px;
     font-size: calc(1rem - 0.1vw);
-    font-weight: 100;
+    font-weight: 200;
     text-align:justify;
+    pointer-events: none;
 }
 
 #EqualityDes {
-    position: relative;
-    top: 250px;
+    position: absolute;
+    top: 190px;
 }
 
 /* The first step */
