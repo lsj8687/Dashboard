@@ -36,8 +36,8 @@ h1	{
     line-height: 1.5em;
 	width: 53%;
 	left: 0;
-	font-weight: 700;
-    font-size: calc(1rem + 1.8vw);
+	font-weight: 600;
+    font-size: calc(1rem + 1.5vw);
 }
 
 h2 {
@@ -156,6 +156,8 @@ h5 {
     position: absolute;
     display: flex;
     top: 25%;
+    font-size: calc(1rem + 1.8vw);
+    font-weight: 700;
 }
 .mast-subtitle {
     letter-spacing: 0.2rem;
@@ -165,7 +167,8 @@ h5 {
     top: 35%;
 	color: white;
     line-height: 1.5em;
-	font-size: calc(1rem + 1.2vw);
+	font-size: calc(1rem + 1.5vw);
+    font-weight: 700;
 }
 .mast-text {
     text-align: start;
