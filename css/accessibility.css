@@ -31,13 +31,13 @@
   #acc-wrapper {
     background: rgba(0,0,0,0.5);
     position: absolute;
-    height: 170px;
-    left: 33%;
+    height: 225px;
+    left: 31%;
     transform: translateX(50%);
-    top: 150px;
+    top: 170px;
     bottom: 60%;
     padding: 6px;
-    width: 330px;
+    width: 380px;
     z-index: 3;
     border-radius: 20px;
     display: flex;
@@ -45,24 +45,27 @@
     justify-content: space-between;
   }
   #overallSummary {
-    height: 250px;
+    height: 280px;
     flex-direction: column;
     justify-content: space-around;
   }
   #overallTitle {
     align-items: center;
-    font-size: 15px;
+    font-size: 30px;
     font-weight: 600;
     color: white;
     text-align: center;
-    margin-top: -13px;
+    margin-top: -20px;
+    margin-bottom: -10px;
   }
   #overallSmallText{
     align-items: center;
     padding-left: 15px;
     padding-right: 15px;
-    font-size: 12px;
-    font-weight: 200;
+    padding-bottom: 10px;
+    padding-top: 4px;
+    font-size: 20px;
+    font-weight: 500;
     color: white;
     height: 5px;
     display: flex;
@@ -73,8 +76,9 @@
     align-items: center;
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 10px;
-    font-size: 36px;
+    padding-top: 35px;
+    padding-bottom: 25px;
+    font-size: 56px;
     font-weight: 600;
     color: white;
     height: 40px;
@@ -111,19 +115,19 @@
   .sessionAcc_trip {
     width: 165px;
     color: white;
-    font-size: 14px;
+    font-size: 18px;
   }
   .sessionAcc_meas {
     color: white;
-    font-size: 14px;
+    font-size: 18px;
   }
 
 .legend-box{
   position: absolute;
   left: 20px;
-  bottom: 5vh;
-  width: 310px;
-  height: 260px;
+  bottom: 4.5vh;
+  width: 330px;
+  height: 280px;
   color: white;
   font-weight: 500;
   background-color: black;
@@ -134,7 +138,7 @@
     position: absolute;
     left: 20px;
     bottom: 10vh;
-    width: 310px;
+    width: 330px;
     height: 240px;
     color: white;
     font-weight: 500;
@@ -142,14 +146,15 @@
 }
 .legendTitle{
   position: relative;
-  padding-top: 20px;
+  padding-top: 0px;
+  padding-bottom: 3px;
   padding-left: 10px;
   padding-right: 10px;
-  font-size: 14px;
+  font-size: 15px;
   text-align: left;
 }
 .legendBoxes{
-  position: relative;
+  position: absolute;
   padding-left: 10px;
 }
 .legendBox{
@@ -161,10 +166,10 @@
 }
 .legendText{
   position:absolute;
-  line-height: 9.5px;
-  font-size: 12px;
+  line-height: 7px;
+  font-size: 14px;
   top: 90px;
-  margin-top: 2px;
+  margin-top: -5px;
   margin-left: 40px;
   color: white;
   font-weight: 500;
@@ -178,15 +183,15 @@
 }
 .sliderAccContentAbsolute {
   position: absolute;
-  width: 230px;
-  font-size: 14px;
+  width: 270px;
+  font-size: 18px;
   font-weight: 300;
   color: white;
 }
 .sliderAccContentRelative {
   position: absolute;
-  width: 230px;
-  font-size: 14px;
+  width: 270px;
+  font-size: 18px;
   font-weight: 300;
   color: white;
 }

@@ -43,19 +43,22 @@
 
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+<script src="./lib/nice_select2/js/nice-select2.js"></script>
+<link rel="stylesheet" href="./lib/nice_select2/css/nice-select2.css" />
+
 <body>
     <div id="graphic">
         <section class="step masthead" id="masterhead">
             <div class="logo-wrapper">
-                <a href="https://cspav.gatech.edu/" target="_blank"><img src="img/CSPAV_TechGold.jpg" alt="" width="200" height="35"></a>
+                <a href="https://cspav.gatech.edu/" target="_blank"><img src="img/CSPAV_TechGold.jpg" alt="" width="280" height="50"></a>
             </div>
-            <h1 class="mast-title">Atlanta's Transit</h1>
-            <div class="focus"> 
+            <h1 class="mast-title">Atlanta's Transit Justice</h1>
+            <!-- <div class="focus"> 
                 <div class="focus--mask">
                         <div class="focus--mask-inner">Justice</div>
                 </div>
-            </div> 
-            <h1 class="mast-subtitle">:The current and the future</h1>
+            </div>  -->
+            <h1 class="mast-subtitle">:the current and future</h1>
             <h3 class="mast-text">An interactive tool that compares On-demand Multimodal Transit System (ODMTS) and the conventional transit system in Atlanta in terms of <br> 1) overall accessibility and <br> 2) transit equity/equality</h3>
         </section>
 
@@ -63,11 +66,11 @@
             <h1>On-Demand Multimodal Transit System</h1>
             <h2>ODMTS connects residents in every corner of Atlanta to high-frequency rail/bus networks by serving their first/last miles via on-demand shuttles. <br> <br>
                 ODMTS is designed to contribute to improving both the transit accessibility and transit equity in Atlanta area.</h2>
-            <a class="btn-light btn-xl" href="https://sam.isye.gatech.edu/projects/demand-multimodal-transit-systems/atlanta-pilot" style="color:gray">Learn More</a>
+            <a class="btn-light btn-xl" href="https://sam.isye.gatech.edu/projects/demand-multimodal-transit-systems/atlanta-pilot" style="color:black">Learn More</a>
         </section>
 
         <section class="step"> 
-            <h1>Transit accessibility</h1>
+            <h1>Transit Accessibility</h1>
             <h2>We measure transit accessibility by how many destinations (e.g., jobs or stores) can be reached from a neighborhood within a given threshold. The threshold can be defined in two ways:
                     <br>
                     <br>
@@ -82,7 +85,7 @@
 
         <section class="step back">
             <div class="mapWrapperAcc">
-                <div class="mapTitle"> <p>Transit accessbility map</p></div>
+                <div class="mapTitle"> <p>Transit Accessbility Map</p></div>
                 <div class="mapTitleLeft"> <p>Conventional Public Transit System </p> </div>
                 <div class="mapTitleRight"> <p style="color: #dcfcb8;">On-demand Multimodal Transit System</p> </div>
                 <div id="acc-wrapper">
@@ -92,11 +95,11 @@
                         </div>
                         <div id="overallSmallText">
                             <p> Current </p>
-                            <p style="color: #dcfcb8; font-weight: 300;"> ODMTS </p>
+                            <p style="color: #dcfcb8; font-weight: 500;"> ODMTS </p>
                         </div>
                         <div id="overallValue">
-                            <p> <span id="overallAccBefore"></b> </span> % </p>
-                            <p> <span id="overallAccAfter"></b> </span> % </p>
+                            <p> <span id="overallAccBefore"></b> </span>%</p>
+                            <p> <span id="overallAccAfter"></b> </span>%</p>
                         </div>
                         <div class="overallDescript" id="overallContent">
                             <p>of all residents can <b>commute to work</b> by transit within <b>45 minutes</b> during morning peak hour
@@ -135,14 +138,14 @@
                     </div>
                     <div class="sliderContainer">
                         <div class='sliderAccContentAbsolute'>
-                            <p style="margin-bottom:7px;"> Accessible within <span style="font-weight:600" id="sliderValueAcc_abs"> </span> minutes</p>
+                            <p style="margin-bottom:3px;"> Accessible within <span style="font-weight:600" id="sliderValueAcc_abs"> </span> minutes</p>
                             <input id='myRangeAcc_abs' class="slider" type="range" min="30" max="75" value="45" step="3">
-                            <p style="text-align:left; margin-bottom: 0em; font-size: 13px; font-weight: 100;"> 30 minutes <span style="float:right"> 75 minutes </span> </p>
+                            <p style="text-align:left; margin-bottom: 0em; margin-top: 0.2em; font-size: 13px; font-weight: 100;"> 30 minutes <span style="float:right"> 75 minutes </span> </p>
                         </div>
                         <div class='sliderAccContentRelative'>
-                            <p style="margin-bottom:7px;"> Accessible within <span style="font-weight:600" id="sliderValueAcc_rel"> </span> X driving time</p>
+                            <p style="margin-bottom:3px;"> Accessible within <span style="font-weight:600" id="sliderValueAcc_rel"> </span> X driving time</p>
                             <input id='myRangeAcc_rel' class="slider" type="range" min="1" max="3" value="2" step="0.2">
-                            <p style="text-align:left; margin-bottom: 0em; font-size: 13px; font-weight: 100;"> Equal <span style="float:right"> 3 times </span> </p>
+                            <p style="text-align:left; margin-bottom: 0em; margin-top: 0.2em; font-size: 13px; font-weight: 100;"> Equal <span style="float:right"> 3 times </span> </p>
                         </div>
                     </div>
                 </div>
@@ -177,21 +180,21 @@
         </section>
 
         <section class="step"> 
-            <h1>Transit equity</h1>
+            <h1>Transit Equity</h1>
             <h2>Both equity and equality seek a fair distribution of public resources. <br> <br>
                 Equity recognizes that each group of people has different circumstances/demands and allocates the resources and opportunities accordingly. ‘Transit service gap’ is employed to capture the transit (in)equity by comparing the supply and demand of transit services at neighborhood level.
             </h2>
         </section>
 
         <section class="step"> 
-            <h1>Transit equality</h1>
+            <h1>Transit Equality</h1>
             <h2 id = "equality_desc">Equality means each group of people is given the same resources or opportunities. Transit (in)equality is measured by the Gini index and Lorenz curve which capture how far the distribution is from equality.
             </h2>
         </section>
 
         <section class="step back">
             <div class="mapWrapperEqu">
-                <div class="mapTitle"> <p>Transit equity + equality map</p></div>
+                <div class="mapTitle"> <p>Transit Equity + Equality Map</p></div>
                 <div class="mapTitleLeft"> <p>Conventional Public Transit System </p> </div>
                 <div class="mapTitleRight"> <p style="color: #dcfcb8;">On-demand Multimodal Transit System</p> </div>
                 <div id='plot-wrapper'>
@@ -201,7 +204,7 @@
                         </div>
                         <div id='gapSmallText'>
                             <p> Current </p>
-                            <p style="color: #dcfcb8; font-weight: 300;"> ODMTS </p>
+                            <p style="color: #dcfcb8; font-size: 15px; font-weight: 500;"> ODMTS </p>
                         </div>
                         <div id='gapValue'>
                             <p> <span id="gapValueBefore"></b> </span> </p>
@@ -215,13 +218,13 @@
                         </div>
                         <div id="giniSmallText">
                             <p> Current </p>
-                            <p style="color: #dcfcb8; font-weight: 300;"> ODMTS </p>
+                            <p style="color: #dcfcb8; font-size: 15px; font-weight: 500;"> ODMTS </p>
                         </div>
                         <div id="giniValue-wrapper">
                             <div id="giniValue">
-                                <p style="color: #fffde6;"> <span id="giniBeforeLow"></b> </span> </p>
-                                <p style="color: #f7adad;"> <span id="giniBeforeMid"></b> </span> </p>
-                                <p style="color: #e34b4b;"> <span id="giniBeforeHigh"></b> </span> </p>
+                                <p style="color: #fffde6; margin-top: 0px !important; margin-bottom: 0px !important;"> <span id="giniBeforeLow"></b> </span> </p>
+                                <p style="color: #f7adad; margin-top: 0px !important; margin-bottom: 0px !important;"> <span id="giniBeforeMid"></b> </span> </p>
+                                <p style="color: #e34b4b; margin-top: 0px !important; margin-bottom: 0px !important;"> <span id="giniBeforeHigh"></b> </span> </p>
                             </div>
                             <div id="giniValue">
                                 <p style="font-size: 12px; font-weight: 300; text-align: center;"> Low-demand neighborhoods </p>
@@ -229,9 +232,9 @@
                                 <p style="font-size: 12px; font-weight: 300; text-align: center;"> High-demand neighborhoods </p>
                             </div>
                             <div id="giniValue">
-                                <p style="color: #fffde6;"> <span id="giniAfterLow"></b> </span> </p>
-                                <p style="color: #f7adad;"> <span id="giniAfterMid"></b> </span> </p>
-                                <p style="color: #e34b4b;"> <span id="giniAfterHigh"></b> </span> </p>
+                                <p style="color: #fffde6; margin-top: 0px !important; margin-bottom: 0px !important;"> <span id="giniAfterLow"></b> </span> </p>
+                                <p style="color: #f7adad; margin-top: 0px !important; margin-bottom: 0px !important;"> <span id="giniAfterMid"></b> </span> </p>
+                                <p style="color: #e34b4b; margin-top: 0px !important; margin-bottom: 0px !important;"> <span id="giniAfterHigh"></b> </span> </p>
                             </div>
                         </div>
                     </div>
@@ -295,16 +298,16 @@
                             </label>
                         </div>
                     </div>
-                    <div class="sliderContainer">
+                    <div class="sliderContainerEqu">
                         <div class='sliderEquContentAbsolute'>
-                            <p style="margin-bottom:7px;"> Accessible within <span style="font-weight:600" id="sliderValueEqu_abs"> </span> minutes</p>
+                            <p style="margin-bottom:3px;"> Accessible within <span style="font-weight:600" id="sliderValueEqu_abs"> </span> minutes</p>
                             <input id='myRangeEqu_abs' class="slider" type="range" min="30" max="75" value="45" step="3">
-                            <p style="text-align:left; margin-bottom: 0em; font-size: 13px; font-weight: 100;"> 30 minutes <span style="float:right"> 75 minutes </span> </p>
+                            <p style="text-align:left; margin-bottom: 0em; margin-top: 0.2em; font-size: 13px; font-weight: 100;"> 30 minutes <span style="float:right"> 75 minutes </span> </p>
                         </div>
                         <div class='sliderEquContentRelative'>
-                            <p style="margin-bottom:7px;"> Accessible within <span style="font-weight:600" id="sliderValueEqu_rel"> </span> X driving time</p>
+                            <p style="margin-bottom:3px;"> Accessible within <span style="font-weight:600" id="sliderValueEqu_rel"> </span> X driving time</p>
                             <input id='myRangeEqu_rel' class="slider" type="range" min="1" max="3" value="2" step="0.2">
-                            <p style="text-align:left; margin-bottom: 0em; font-size: 13px; font-weight: 100;"> Equal <span style="float:right"> 3 times </span> </p>
+                            <p style="text-align:left; margin-bottom: 0em; margin-top: 0.2em; font-size: 13px; font-weight: 100;"> Equal <span style="float:right"> 3 times </span> </p>
                         </div>
                     </div>
                 </div>
@@ -413,24 +416,25 @@
             <div id="wrapper-end">
                 <div id="content-description">
                     <h4>Description</h4>
-                    <h5>Both equity and equality seek a fair distribution of public resources
-                    </h5>
+                    <p><h5>The first- and last-mile trip accessibility in public transit trip is the most crucial factor affecting whether an individual will choose public transit. It is a particularly important issue that needs to be solved in a city like Atlanta, GA, where public transit is not the most favored mode of transportation.</h5></p>
+                    <p><h5>Researchers at Georgia Institute of Technology have developed the On-Demand Multimodal Transit System (ODMTS) that serves first- and last-mile trips via on-demand shuttles. ODMTS is currently at a pilot test stage based on multiple neighborhoods in Atlanta in collaboration with the Metropolitan Atlanta Rapid Transit Authority (MARTA). ODMTS is expected to significantly improve public transit accessibility and, in the long run, reduce auto-dependency in the Atlanta region.</h5></p>
+                    <p><h5>This project showcases the performance of ODMTS in terms of (1) transit accessibility and (2) transit equity+equality, by comparing it with the existing conventional transit system.</h5></p>
                 </div>
                 <div id="content-team">
                     <h4>Team</h4>
                     <ul>
-                        <li class="team-member">Uijeong (UJ) Hwang</li>
-                        <li class="team-info"><a href="https://cspav.gatech.edu/" target="_blank">Center for Spatial Planning Analytics and Visualization</a></li>
-                        <li class="team-member">Seung Jae Lieu</li>
-                        <li class="team-info">PhD Student, City and Regional Planning</li>
                         <li class="team-member">Subhrajit Guhathakurta</li>
-                        <li class="team-info">Director</li>
-                        <li class="team-member">Pascal Van Hentenryck</li>
-                        <li class="team-info">CSPAV</li>
+                        <li class="team-info">Professor, <a href="https://cspav.gatech.edu/" target="_blank">Center for Spatial Planning Analytics and Visualization (CSPAV)</a></li>
+                        <li class="team-member">Uijeong Hwang</li>
+                        <li class="team-info">Ph.D. Student, <a href="https://cspav.gatech.edu/" target="_blank">Center for Spatial Planning Analytics and Visualization (CSPAV)</a></li>
                         <li class="team-member">Seung Jae Lieu</li>
-                        <li class="team-info">CSPAV</li>
+                        <li class="team-info">Master Student, <a href="https://cspav.gatech.edu/" target="_blank">Center for Spatial Planning Analytics and Visualization (CSPAV)</a></li>
+                        <li class="team-member">Pascal Van Hentenryck</li>
+                        <li class="team-info">Professor, <a href="https://www.ai4opt.org/" target="_blank">AI Institute for Advances in Optimization</a></li>
+                        <li class="team-member">Kevin Dalmeijer</li>
+                        <li class="team-info">Senior Research Associate, <a href="https://www.ai4opt.org/" target="_blank">AI Institute for Advances in Optimization</a></li>
                         <li class="team-member">Hongzhao Guan</li>
-                        <li class="team-info">CSPAV</li>
+                        <li class="team-info">Ph.D. Student, <a href="https://www.ai4opt.org/" target="_blank">AI Institute for Advances in Optimization</a></li>
                     </ul>
                     <h4>Publication</h4>
                 </div>

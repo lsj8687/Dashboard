@@ -33,3 +33,6 @@ const color_3class_14 = {
     'C2': color_3class[7],
     'C3': color_3class[8],
 };
+
+//Convert dropdown into nice looking css
+NiceSelect.bind(document.getElementById("demandEqu"));
