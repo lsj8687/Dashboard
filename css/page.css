@@ -36,8 +36,8 @@ h1	{
     line-height: 1.5em;
 	width: 53%;
 	left: 0;
-	font-weight: 600;
-    font-size: calc(1rem + 1.5vw);
+	font-weight: 700;
+    font-size: calc(1rem + 1.8vw);
 }
 
 h2 {
@@ -132,8 +132,9 @@ h5 {
     text-align:justify;
 }
 
-#equality_desc {
-    top: 210px;
+#EqualityDes {
+    position: relative;
+    top: 250px;
 }
 
 /* The first step */
@@ -180,7 +181,7 @@ h5 {
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
-    left:78%;
+    right: 40px;
 }
 /* .focus {
     position: relative;
