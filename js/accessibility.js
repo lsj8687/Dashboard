@@ -1558,6 +1558,8 @@ mapAftAcc.on("wheel", event => {
   }
 });
 
+mapAftAcc.addControl(new mapboxgl.NavigationControl(), 'top-right');
+
 function coordinateAcc() {
 
     disable = false;

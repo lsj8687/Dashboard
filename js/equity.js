@@ -2048,6 +2048,8 @@ Promise.all([
       }
     });
 
+    mapAftEqu.addControl(new mapboxgl.NavigationControl(), 'top-right');
+
 // moving the map simultaneously 
 function coordinateEqu() {
 
