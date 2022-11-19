@@ -2024,6 +2024,30 @@ Promise.all([
 
     };
 
+    mapBefEqu.scrollZoom.disable();
+    mapBefEqu.scrollZoom.setWheelZoomRate(0.02); // Default 1/450
+    
+    mapBefEqu.on("wheel", event => {
+      if (event.originalEvent.ctrlKey) { // Check if CTRL key is pressed
+        event.originalEvent.preventDefault(); // Prevent chrome/firefox default behavior
+        if (!mapBefEqu.scrollZoom._enabled) mapBefEqu.scrollZoom.enable(); // Enable zoom only if it's disabled
+      } else {
+        if (mapBefEqu.scrollZoom._enabled) mapBefEqu.scrollZoom.disable(); // Disable zoom only if it's enabled
+      }
+    });
+    
+    mapAftEqu.scrollZoom.disable();
+    mapAftEqu.scrollZoom.setWheelZoomRate(0.02); // Default 1/450
+    
+    mapAftEqu.on("wheel", event => {
+      if (event.originalEvent.ctrlKey) { // Check if CTRL key is pressed
+        event.originalEvent.preventDefault(); // Prevent chrome/firefox default behavior
+        if (!mapAftEqu.scrollZoom._enabled) mapAftEqu.scrollZoom.enable(); // Enable zoom only if it's disabled
+      } else {
+        if (mapAftEqu.scrollZoom._enabled) mapAftEqu.scrollZoom.disable(); // Disable zoom only if it's enabled
+      }
+    });
+
 // moving the map simultaneously 
 function coordinateEqu() {
 

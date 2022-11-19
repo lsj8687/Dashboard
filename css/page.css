@@ -134,6 +134,7 @@ h5 {
 }
 
 #TeamLogoList {
+    margin-left: 45px;
     display: flex;
     justify-content: space-around;
 }
@@ -197,7 +198,7 @@ h5 {
     line-height: 1.5em;
 	font-size: calc(1rem + 1.5vw);
     font-weight: 700;
-    width: 70%;
+    width: 80%;
 }
 .mast-text {
     text-align: start;

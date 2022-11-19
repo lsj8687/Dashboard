@@ -1534,6 +1534,29 @@ function readyAcc(dataAcc){
 
 }
 
+mapBefAcc.scrollZoom.disable();
+mapBefAcc.scrollZoom.setWheelZoomRate(0.02); // Default 1/450
+
+mapBefAcc.on("wheel", event => {
+  if (event.originalEvent.ctrlKey) { // Check if CTRL key is pressed
+    event.originalEvent.preventDefault(); // Prevent chrome/firefox default behavior
+    if (!mapBefAcc.scrollZoom._enabled) mapBefAcc.scrollZoom.enable(); // Enable zoom only if it's disabled
+  } else {
+    if (mapBefAcc.scrollZoom._enabled) mapBefAcc.scrollZoom.disable(); // Disable zoom only if it's enabled
+  }
+});
+
+mapAftAcc.scrollZoom.disable();
+mapAftAcc.scrollZoom.setWheelZoomRate(0.02); // Default 1/450
+
+mapAftAcc.on("wheel", event => {
+  if (event.originalEvent.ctrlKey) { // Check if CTRL key is pressed
+    event.originalEvent.preventDefault(); // Prevent chrome/firefox default behavior
+    if (!mapAftAcc.scrollZoom._enabled) mapAftAcc.scrollZoom.enable(); // Enable zoom only if it's disabled
+  } else {
+    if (mapAftAcc.scrollZoom._enabled) mapAftAcc.scrollZoom.disable(); // Disable zoom only if it's enabled
+  }
+});
 
 function coordinateAcc() {
 
