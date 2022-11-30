@@ -88,7 +88,7 @@
   }
   .overallDescript {
     align-items: center;
-    font-size: 16px;
+    font-size: calc(1rem);
     margin-left: 4px;
     margin-right: 4px;
     font-weight: 200;
@@ -115,11 +115,11 @@
   .sessionAcc_trip {
     width: 165px;
     color: white;
-    font-size: 18px;
+    font-size: calc(1rem);
   }
   .sessionAcc_meas {
     color: white;
-    font-size: 18px;
+    font-size: calc(1rem);
   }
 
 .legend-box{
@@ -150,7 +150,7 @@
   padding-bottom: 3px;
   padding-left: 10px;
   padding-right: 10px;
-  font-size: 15px;
+  font-size: calc(1rem - 0.05vw);
   text-align: left;
 }
 .legendBoxes{
@@ -167,7 +167,7 @@
 .legendText{
   position:absolute;
   line-height: 7px;
-  font-size: 14px;
+  font-size: calc(1rem - 0.1vw);
   top: 90px;
   margin-top: -5px;
   margin-left: 40px;
@@ -184,14 +184,14 @@
 .sliderAccContentAbsolute {
   position: absolute;
   width: 270px;
-  font-size: 18px;
+  font-size: calc(1rem);
   font-weight: 300;
   color: white;
 }
 .sliderAccContentRelative {
   position: absolute;
   width: 270px;
-  font-size: 18px;
+  font-size: calc(1rem);
   font-weight: 300;
   color: white;
 }
