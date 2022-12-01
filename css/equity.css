@@ -128,9 +128,9 @@
   left: 30%;
   transform: translateX(50%);
   top: 15vh;
-  height: 78vh;
+  bottom: 6vh;
   padding: 0.6vmin;
-  width: 24vw;
+  width: 370px;
   z-index: 3;
   border-radius: 16px;
   display: flex;

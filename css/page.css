@@ -407,14 +407,14 @@ input[type="radio"]:checked + label::after {
     right: 10vw;
 }
 #odmtsfig {
-    position: relative;
+    position: absolute;
     top: 0px;
-    right: 10%;
+    right: calc(-5vw - 150px); 
 }
 #accfig {
-    position: relative;
+    position: absolute;
     top: 0px;
-    right: 10%;
+    right: calc(-5vw - 150px); 
 }
 .fraction{
     top: 1.7vh;
