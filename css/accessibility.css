@@ -5,14 +5,14 @@
   background: #080C16;
   z-index: 10;
   width: 100%;
-  height: calc(100vh - 30px);
+  height: calc(100vh - 10px);
 }
 #mapBefAcc {
     position: absolute;
     top: 0px;
     bottom: 0px;
     left: 0px;
-    width: calc(50vw - 11px);
+    width: calc(57.5vw);
     height: 100%;
     z-index: 0;
     cursor: pointer;
@@ -21,7 +21,7 @@
     position: absolute;
     top: 0px;
     bottom: 0px;
-    width: calc(50vw - 11px);
+    width: calc(42.5vw);
     height: 100%;
     z-index: 0;
     cursor: pointer;
@@ -33,7 +33,7 @@
     position: absolute;
     height: 24vh;
     width: 22vw;
-    left: 31%;
+    right: 42.5%;
     transform: translateX(50%);
     top: 170px;
     bottom: 60%;
