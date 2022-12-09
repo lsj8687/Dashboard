@@ -51,11 +51,6 @@
                 <a href="https://cspav.gatech.edu/" target="_blank"><img id="logoCSPAV" src="img/CSPAV_TechGold.jpg" alt="" width="280" height="50"></a>
             </div>
             <h1 class="mast-title">Atlanta's Transit Equity</h1>
-            <!-- <div class="focus"> 
-                <div class="focus--mask">
-                        <div class="focus--mask-inner">Justice</div>
-                </div>
-            </div>  -->
             <h1 class="mast-subtitle">Current benchmarks and future possibilities</h1>
             <h3 class="mast-text">An interactive tool that compares On-demand Multimodal Transit System (ODMTS) and the conventional transit system in Atlanta in terms of 1) overall accessibility and 2) transit equity/equality</h3>
         </section>
@@ -247,7 +242,7 @@
                         </div>
                         <div class="dropdown">
                             <label-drop for="demand-type"></label-drop>
-                            <select name="demand-type" id="demandEqu">
+                            <select name="demand-type" id="demandEqu" onchange="changeFunc()">
                                 <option value="dep">Population without vehicles</option>
                                 <option value="min">Minority population</option>
                                 <option value="pov">Low-income population</option>
@@ -317,7 +312,7 @@
                 <div id="popup1" class="overlay">
                     <div class="popup">
                         <a class="close" href="#mapWrapperEqu">&times;</a>
-                        <h4 class="title">How is the 'Transit Inequality' measured?</h4>
+                        <h4 class="title">How is the 'Transit Inequity' measured?</h4>
                         <div class="content">
                             <ul>
                             <li>The numeric values are Gap indices that summarize the overall gap between transit supply (i.e., accessibility) and demand, which is measured by:
@@ -414,7 +409,7 @@
             <div id="wrapper-end">
                 <div id="content-description">
                     <h4>Description</h4>
-                    <p><h5>The first- and last-mile trip accessibility in public transit trip is the most crucial factor affecting whether an individual will choose public transit. It is a particularly important issue that needs to be solved in a city like Atlanta, GA, where public transit is not the most favored mode of transportation.</h5></p>
+                    <p><h5>The first- and last-mile trip accessibility in public transit trip is one of the most crucial factors affecting whether an individual will choose public transit or not. It is a particularly important issue that needs to be solved in a city like Atlanta, GA, where public transit is not the most favored mode of transportation.</h5></p>
                     <p><h5>Researchers at Georgia Institute of Technology have developed the On-Demand Multimodal Transit System (ODMTS) that serves first- and last-mile trips via on-demand shuttles. ODMTS is currently at a pilot test stage based on multiple neighborhoods in Atlanta in collaboration with the Metropolitan Atlanta Rapid Transit Authority (MARTA). ODMTS is expected to significantly improve public transit accessibility and, in the long run, reduce auto-dependency in the Atlanta region.</h5></p>
                     <p><h5>This project showcases the performance of ODMTS in terms of (1) transit accessibility and (2) transit equity+equality, by comparing it with the existing conventional transit system.</h5></p>
                 </div>
@@ -423,7 +418,7 @@
                     <ul>
                         <li class="team-member">Subhrajit Guhathakurta, <a class="member-info">Professor</a></li>
                         <li class="team-member">Pascal Van Hentenryck, <a class="member-info">Professor</a></li>
-                        <li class="team-member">Uijeong Hwang, <a class="member-info">Ph.D. Student</a></li>
+                        <li class="team-member"><a href="https://ujhwang.github.io" target="_blank">Uijeong Hwang</a>, <a class="member-info">Ph.D. Student</a></li>
                         <li class="team-member">Seung Jae Lieu, <a class="member-info">Master Student</a></li>
                         <li class="team-member">Kevin Dalmeijer, <a class="member-info">Senior Research Associate</a></li>
                         <li class="team-member">Hongzhao Guan, <a class="member-info">Ph.D. Student</a></li>
@@ -442,17 +437,6 @@
     </div>
 
     <div id="vis"></div>
-    
-
-    <!-- Custom scripts for this template -->
-    <!-- <script src="js/d3.js"></script>
-
-    <script src="js/page.js"></script>
-    <script src="js/accessibility.js"></script>
-    <script src="js/equity.js"></script>
-
-    <script src="js/scroller.js"></script>
-    <script src="js/sections_sample.js"></script> -->
 
 
 </body>

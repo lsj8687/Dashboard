@@ -476,7 +476,7 @@ Promise.all([
                 .style("color", "white")
                 .attr('font-weight', '100');
 
-            const scatterPlotXAxis = scatterPlot.append("g")
+            scatterPlot.append("g")
                 .attr('id', 'scatterRedraw')
                 .append('text')
                 .attr("transform", "translate(" + plot_w/2 + " ," + (plot_h + 35) + ")")
@@ -2090,7 +2090,6 @@ function coordinateEqu() {
 
 coordinateEqu();
 
-
 function xAxisLegendChange(xAxisNameLegend, demandUnit) {
     if (demandUnit=='pct') {unit = '% of '} else {unit = ''}
     legend_x_text_sub
@@ -2101,54 +2100,21 @@ function xAxisScatterChange(xAxisNameScatter, demandUnit) {
     if (demandUnit=='pct') {prefix = 'Proportion of '} else {prefix = 'Number of '};
 };
 
-function legend_dep() {
-    xAxisNameLegend = 'pop. without vehicles'
-    xAxisNameScatter = 'Population without Vehicles'
-    xAxisLegendChange(xAxisNameLegend, demandUnit)
-    xAxisScatterChange(xAxisNameScatter, demandUnit)
-};
+function changeFunc() {
+    var selectBox = document.getElementById("demandEqu");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
 
-function legend_min() {
-    xAxisNameLegend = 'Minority pop.'
-    xAxisNameScatter = 'Minority Population'
-    xAxisLegendChange(xAxisNameLegend, demandUnit)
-    xAxisScatterChange(xAxisNameScatter, demandUnit)
-};
+    if (selectedValue=="min") {xAxisNameLegend = 'Minority pop.', xAxisNameScatter = 'Minority Population'};
+    if (selectedValue=="pov") {xAxisNameLegend = 'Low-income pop.', xAxisNameScatter = 'Low-income Population'};
+    if (selectedValue=="emp") {xAxisNameLegend = 'Unemployed pop.', xAxisNameScatter = 'Unemployed Population'};
+    if (selectedValue=="eld") {xAxisNameLegend = 'Elderly pop.', xAxisNameScatter = 'Elderly (70-) Population'};
+    if (selectedValue=="dis") {xAxisNameLegend = 'Disabled pop.', xAxisNameScatter = 'Disabled Population'};
+    if (selectedValue=="chi") {xAxisNameLegend = 'Children', xAxisNameScatter = 'Children below 14'};
+    if (selectedValue=="dep") {xAxisNameLegend = 'pop. without vehicles', xAxisNameScatter = 'Population without Vehicles'};
 
-function legend_pov() {
-    xAxisNameLegend = 'Low-income pop.'
-    xAxisNameScatter = 'Low-income Population'
     xAxisLegendChange(xAxisNameLegend, demandUnit)
     xAxisScatterChange(xAxisNameScatter, demandUnit)
-};
-
-function legend_emp() {
-    xAxisNameLegend = 'Unemployed pop.'
-    xAxisNameScatter = 'Unemployed Population'
-    xAxisLegendChange(xAxisNameLegend, demandUnit)
-    xAxisScatterChange(xAxisNameScatter, demandUnit)
-};
-
-function legend_eld() {
-    xAxisNameLegend = 'Elderly pop.'
-    xAxisNameScatter = 'Elderly (70-) Population'
-    xAxisLegendChange(xAxisNameLegend, demandUnit)
-    xAxisScatterChange(xAxisNameScatter, demandUnit)
-};
-
-function legend_dis() {
-    xAxisNameLegend = 'Disabled pop.'
-    xAxisNameScatter = 'Disabled Population'
-    xAxisLegendChange(xAxisNameLegend, demandUnit)
-    xAxisScatterChange(xAxisNameScatter, demandUnit)
-};
-
-function legend_chi() {
-    xAxisNameLegend = 'Children'
-    xAxisNameScatter = 'Children below 14'
-    xAxisLegendChange(xAxisNameLegend, demandUnit)
-    xAxisScatterChange(xAxisNameScatter, demandUnit)
-};
+   };
 
 function unit_num() {
     demandUnit = 'num'

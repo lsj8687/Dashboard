@@ -106,7 +106,7 @@
 #legend-wrapper {
   position: absolute;
   height: 480px;
-  width: 180px;
+  width: 200px;
   bottom: 2px;
   left: 12px;
   padding: 1vmin;
@@ -308,7 +308,7 @@
 
 .popup .title {
   position: relative;
-  width: 100%;
+  width: 90%;
   top: -14vh;
   font-size: 2.2vmin;
   font-family: "hepta Slab";
