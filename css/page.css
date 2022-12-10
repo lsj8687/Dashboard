@@ -394,7 +394,7 @@ input[type="radio"]:checked + label::after {
     font-family: "hepta Slab";
 }
 .cmath {
-    font-size: calc(1rem - 0.3vw);
+    font-size: calc(1rem);
 }
 #plotSvgInequity {
     position: absolute;
