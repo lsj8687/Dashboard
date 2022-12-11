@@ -43,9 +43,6 @@ function draw0(){
     d3.select("#accfig").remove();
 }
 
-function draw5(){
-}
-
 //Second draw function
 //Draw the figure describing ODMTS
 function draw1() {
@@ -470,7 +467,7 @@ function draw4() {
 //Array of all the graph functions
 //Will be called from the scroller functionality
 let activationFunctions = [
-    draw5,
+    draw0,
     draw1,
     draw2,
     draw0,

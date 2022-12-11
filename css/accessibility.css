@@ -105,6 +105,7 @@
     left: 20px;
     top: 130px;
     font-weight: 500;
+    width: calc(18vmin + 120px);
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -114,14 +115,14 @@
   }
 
   .sessionAcc_trip {
-    width: 24vw;
+    width: 100%;
     color: white;
-    font-size: calc(1rem);
+    font-size: calc(0.5vw + 8px);
   }
   .sessionAcc_meas {
     color: white;
-    width: 24vw;
-    font-size: calc(1rem);
+    width: 100%;
+    font-size: calc(0.5vw + 8px);
   }
 
 .legend-box{
@@ -187,7 +188,7 @@
 .sliderAccContentAbsolute {
   position: absolute;
   width: 14vw;
-  font-size: calc(0.5vw + 8px);
+  font-size: 1.6vmin;
   font-weight: 300;
   color: white;
 }
@@ -221,7 +222,7 @@
   cursor: pointer; /* Cursor on hover */
 }
 
-@media screen and (max-width: 1070px) {
+@media screen and (max-width: 1070px), (max-height: 670px){
   #filter-wrapper-Acc {
     display: none;
   }

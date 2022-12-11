@@ -30,6 +30,7 @@
 
 #filter-wrapper-Equ {
   position: absolute;
+  width: calc(18vmin + 120px);
   left: 20px;
   top: 110px;
   font-weight: 500;
@@ -42,22 +43,22 @@
 }
 
 .sessionEqu_demand {
-  width: 24vw;
+  width: 100%;
   color: white;
   font-size: calc(1rem);
 }
 .sessionEqu_unit {
-  width: 24vw;
+  width: 100%;
   color: white;
   font-size: calc(1rem);
 }
 .sessionEqu_trip {
-  width: 24vw;
+  width: 100%;
   color: white;
   font-size: calc(1rem);
 }
 .sessionEqu_meas {
-  width: 24vw;
+  width: 100%;
   color: white;
   font-size: calc(1rem);
 }
