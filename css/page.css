@@ -128,14 +128,14 @@ h7 {
     z-index: 100;
 }
 
-.material-icons {
+/* .material-icons {
     position: fixed;
     top: 30%;
     left: 50%;
     transform: translateX(-50%);
     color: white;
     z-index: 100;
-}
+} */
 
 #wrapper-end {
     width: 100%;
