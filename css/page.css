@@ -497,7 +497,7 @@ input[type="radio"]:checked + label::after {
     height: 80vh;
 }
 
-@media screen and (min-width: 768px) {
+@media only screen and (min-width: 802px) {
     #warning {
       display: none;
     }
