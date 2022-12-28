@@ -286,36 +286,28 @@
 }
 .popup .close {
   position: absolute;
-  top: 1vh;
-  right: 1vw;
+  top: -0.2vh;
+  right: 0.3vw;
   transition: all 200ms;
-  font-size: 3.6vmin;
+  font-size: 3.0vmin;
   font-weight: bold;
   text-decoration: none;
   color: white;
+  z-index: 30;
 }
 .popup .close:hover {
   color: #ffd752;
 }
 .popup .content {
-  margin-top: -12vh;
-  margin-right: 0.6vw;
-  margin-bottom: 0.6vw;
+  margin-top: -0.2vh;
+  margin-right: 0.4vw;
+  margin-bottom: 0.4vw;
   overflow: auto;
   line-height: 1.5;
   font-size: 1.8vmin;
   text-align: left;
 }
 
-.popup .title {
-  position: relative;
-  width: 90%;
-  top: -14vh;
-  font-size: 2.2vmin;
-  font-family: "hepta Slab";
-  color: white !important;
-  overflow: visible;
-}
 
 @media screen and (max-width: 1070px) {
   #filter-wrapper-Equ {

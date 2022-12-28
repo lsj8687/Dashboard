@@ -1,5 +1,5 @@
 // Create the map with token !토큰이 달라지면 폴리곤 및 다른 정보가 사라짐
-mapboxgl.accessToken = 'pk.eyJ1IjoidWh3YW5nMyIsImEiOiJja3d0bGh4cG8wemxtMm5xcTJ1anc4ajlxIn0.GPUcPfwoUXy6pItqRUvifw';
+mapboxgl.accessToken = 'pk.eyJ1IjoibHNqODY4NyIsImEiOiJjbGM4NzR2cDYzaHVmM29tczdlbXkza3lvIn0.e68GVo5wIz5O9sY2S1FP_w';
 
 const colors = ['#213E9A',' #3C1FA7', '#811CB5', '#C318B0', '#D01367', '#DE0F0E', '#EC7007', '#F9E200']
 

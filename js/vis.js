@@ -67,7 +67,7 @@ function draw3() {
             .domain([0, 1])
             .range([vis_plot_h, 0]);
 
-        const plot = d3.selectAll('#vis').append("svg")
+        const plot = d3.selectAll('#equi-vis').append("svg")
             .attr('id', 'plotSvgInequity')
             .attr('width', vis_plot_w + vis_panel_margin.left + vis_panel_margin.right)
             .attr('height', vis_plot_h + vis_panel_margin.top + vis_panel_margin.bottom)
@@ -213,7 +213,7 @@ function draw3() {
 
     }
 
-    let svg = d3.selectAll('#vis').append("svg")
+    let svg = d3.selectAll('#equi-vis').append("svg")
 
     let text = svg.append("text")
         .attr('id', 'textSvgInequity')
@@ -247,7 +247,7 @@ function draw4() {
         .domain([0, 1])
         .range([vis_plot_h, 0]);
 
-        const plot = d3.selectAll('#vis').append("svg")
+        const plot = d3.selectAll('#equa-vis').append("svg")
         .attr('id', 'plotSvgInequality')
         .attr('width', vis_plot_w + vis_panel_margin.left + vis_panel_margin.right)
         .attr('height', vis_plot_h + vis_panel_margin.top + vis_panel_margin.bottom)
@@ -390,7 +390,7 @@ function draw4() {
 
     }
 
-    let svg = d3.selectAll('#vis').append("svg")
+    let svg = d3.selectAll('#equa-vis').append("svg")
 
     let text = svg.append("text")
         .attr('id', 'textSvgInequality')
@@ -435,7 +435,7 @@ let lastIndex, activeIndex = 0
 
 scroll.on('active', function(index){
     d3.selectAll('.step')
-        .transition().duration(700)
+        .transition().duration(10)
         .style('opacity', function (d, i) {return i === index ? 1 : 1;});
     
     activeIndex = index
@@ -452,7 +452,7 @@ scroll.on('active', function(index){
 })
 
 scroll.on('progress', function(index, progress){
-    if (index == 2 & progress > 0.7){
+    if (index == 2 & progress > 0.9){
 
     }
 })

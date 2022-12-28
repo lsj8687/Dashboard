@@ -9,8 +9,9 @@
 
     <script async src="js/d3.js"></script>
 
-    <script ayncs src="js/scroller.js"></script>
-    <script async src="js/sections_sample.js"></script>
+    <script defer src="js/scroller.js"></script>
+    <!-- <script async src="js/sections_sample.js"></script> -->
+    <script defer src="js/vis.js"></script>
 
     <script async src="js/accessibility.js"></script>
     <script async src="js/page.js"></script>
@@ -68,6 +69,8 @@
             <h2>ODMTS connects residents in every corner of Atlanta to high-frequency rail/bus networks by serving their first/last miles via on-demand shuttles. <br> <br>
                 ODMTS is designed to contribute to improving both the transit accessibility and transit equity in the Atlanta area.</h2>
             <a class="btn-light btn-xl" href="https://sam.isye.gatech.edu/projects/demand-multimodal-transit-systems/atlanta-pilot" target="_blank" style="color:black">Learn More</a>
+            <div id="odmtsfig-wrapper">
+            </div>
         </section>
 
         <section class="step"> 
@@ -79,8 +82,9 @@
                     <br>
                     <br>
                     2)	The ratio of the travel time by public transit to the travel time by driving
-
             </h2>
+            <div id="accfig-wrapper">
+            </div>
         </section>
 
 
@@ -185,12 +189,14 @@
             <h2>Both equity and equality seek a fair distribution of public resources. <br> <br>
                 Equity recognizes that each group of people has different circumstances/demands and allocates the resources and opportunities accordingly. ‘Transit service gap’ is employed to capture the transit (in)equity by comparing the supply and demand of transit services at neighborhood level.
             </h2>
+            <div id="equi-vis"></div>
         </section>
 
         <section class="step"> 
             <h1>Transit Equality</h1>
             <h2 id="EqualityDes">Equality means each group of people is given the same resources or opportunities. Transit (in)equality is measured by the Gini index and Lorenz curve which capture how far the distribution is from equality.
             </h2>
+            <div id="equa-vis"></div>
         </section>
 
         <section class="step back">
@@ -440,8 +446,5 @@
         </section>
 
     </div>
-
-    <div id="vis"></div>
-
 
 </body>

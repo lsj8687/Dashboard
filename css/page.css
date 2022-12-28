@@ -248,17 +248,29 @@ h7 {
     display: flex;
     right: 40px;
 }
-
-#vis {
-    display: inline-block;
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    z-index: 1;
-    margin-left: 0;
-    height: 1000px;
-    width: 40%;
-    background-color: #080C16;
+#odmtsfig-wrapper {
+    position: absolute;
+    left: calc(70%);
+    transform: translateX(-50%);
+    top: 23%;
+    width: 38%;
+    height: 72%;
+    background-image: url('../img/ODMTS.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+}
+#accfig-wrapper {
+    position: absolute;
+    left: calc(70%);
+    transform: translateX(-50%);
+    top: 23%;
+    width: 35%;
+    height: 65%;
+    background-image: url('../img/accfig.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
 }
 
 .back {
@@ -433,11 +445,7 @@ input[type="radio"]:checked + label::after {
     top: 20vh;
     right: 10vw;
 }
-#odmtsfig {
-    position: absolute;
-    top: 0px;
-    right: calc(-5vw - 150px); 
-}
+
 #accfig {
     position: absolute;
     top: 0px;
