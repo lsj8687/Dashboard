@@ -7,7 +7,7 @@
     width: 100%;
     overflow: hidden;
     background-color: #333;
-    position: absolute;
+    position: fixed;
     z-index: 99;
 }
 .loader > div {
@@ -22,7 +22,7 @@
     left: 0;
     right: 0;
     border-radius: 50%;
-    animation: spin 1.5s infinite linear;
+    animation: spin 2s infinite linear;
 }
 @keyframes spin{
     100%{
