@@ -116,14 +116,14 @@ let overallContent =`
 // **The whole process of dashboard starts by loading csv data
 function readyAcc(dataAcc){
 
-  // // reload the webpage since the map is not loaded
-  // window.onload = function() {
-  //   if(!window.location.hash) {
-  //     window.location = window.location + '#loaded';
-  //     window.location.reload();
-  //   }
-  // }
-  // window.onload();
+  // reload the webpage since the map is not loaded
+  window.onload = function() {
+    if(!window.location.hash) {
+      window.location = window.location + '#loaded';
+      window.location.reload();
+    }
+  }
+  window.onload();
 
   overallAccBefore.innerHTML = 10
   overallAccAfter.innerHTML = 51
