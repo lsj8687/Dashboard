@@ -2,6 +2,34 @@
 	box-sizing: border-box;
 }
 
+.loader {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    z-index: 99;
+}
+.loader > div {
+    height: 100px;
+    width: 100px;
+    border: 15px solid gray;
+    border-top-color: skyblue;
+    position: absolute;
+    margin: auto;
+    top: 0; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    animation: spin 1.5s infinite linear;
+}
+@keyframes spin{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 html {
 	font-family: "hepta Slab";
 	scroll-snap-type: mandatory;
