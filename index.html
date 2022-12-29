@@ -452,6 +452,14 @@
 
     </div>
 
+    <script>
+        $(window).on('load',function(){
+            if(window.location.hash) {
+                $(".loader").fadeOut(1500);
+            }
+        });  
+    </script>
+
 </body>
 
 </html>

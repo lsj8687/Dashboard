@@ -125,10 +125,6 @@ function readyAcc(dataAcc){
   }
   window.onload();
 
-  $(window).on('load',function(){
-    $(".loader").fadeOut(1000);
-  });  
-
   overallAccBefore.innerHTML = 10
   overallAccAfter.innerHTML = 51
 
