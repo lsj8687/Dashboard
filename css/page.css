@@ -2,6 +2,12 @@
 	box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 .loader {
     height: 100%;
     width: 100%;
@@ -224,9 +230,9 @@ h7 {
 }
 
 /* The first step */
-#masterhead {
+/* #masterhead {
     width: calc(100vw - 23px);
-}   
+}    */
 .masthead  {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 12, 22, .8)), to(rgba(8, 12, 22, .8))), url(../img/mast.jpeg) !important;
     background: linear-gradient(to bottom, rgba(8, 12, 22, .8) 0, rgba(8, 12, 22, .8) 100%), url(../img/mast.jpeg) !important;
@@ -234,7 +240,6 @@ h7 {
     background-repeat: no-repeat;
     background-attachment: scroll !important;
     background-size: cover !important;
-    width: 103%;
     z-index: 10;
 }
 .mast-title {
