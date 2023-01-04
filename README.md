@@ -1,4 +1,4 @@
-
+https://lsj8687.github.io/transit-equity/
 
 The current public transit system in Atlanta has been significantly underutilized primarily due to its low accessibility – a large proportion of the population has difficulties approaching the transit hubs. ODMTS, an innovative transit system that is now in the pilot phase, is designed to connect residents in every corner of Atlanta to high-frequency rail/bus networks by serving their first/last miles via on-demand shuttles, thereby contributing to improving both the transit accessibility and transit equity in Atlanta area.
 
